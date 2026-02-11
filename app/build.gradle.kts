@@ -1,3 +1,5 @@
+val jdaVersion = "6.3.0"
+
 plugins {
     application
 }
@@ -12,6 +14,10 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation(libs.guava)
+    implementation("net.dv8tion:JDA:${jdaVersion}") {
+        exclude(module = "opus-java")
+        exclude(module = "tink")
+    }
 }
 
 java {
