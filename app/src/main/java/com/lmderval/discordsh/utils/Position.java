@@ -13,6 +13,12 @@ public class Position {
         this.column = column;
     }
 
+    public Position(@NonNull Position other) {
+        input = other.input;
+        line = other.line;
+        column = other.column;
+    }
+
     public boolean isSameInput(@NonNull Position other) {
         return input.equals(other.input);
     }
