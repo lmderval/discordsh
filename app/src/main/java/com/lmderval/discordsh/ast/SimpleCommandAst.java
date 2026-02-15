@@ -13,6 +13,11 @@ public class SimpleCommandAst extends BaseAst {
         this.args = args;
     }
 
+    @Override
+    public void accept(@NonNull BaseVisitor visitor) {
+        visitor.visit(this);
+    }
+
     public @NonNull List<String> getArgs() {
         return args;
     }
