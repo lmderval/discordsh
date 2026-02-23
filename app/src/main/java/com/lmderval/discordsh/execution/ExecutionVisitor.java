@@ -1,9 +1,9 @@
 package com.lmderval.discordsh.execution;
 
 import com.lmderval.discordsh.ast.BaseAst;
-import com.lmderval.discordsh.ast.BaseVisitor;
+import com.lmderval.discordsh.ast.IVisitor;
 import com.lmderval.discordsh.ast.SimpleCommandAst;
-import com.lmderval.discordsh.execution.builtins.BaseBuiltin;
+import com.lmderval.discordsh.execution.builtins.IBuiltin;
 import com.lmderval.discordsh.execution.builtins.EchoBuiltin;
 import org.jspecify.annotations.NonNull;
 
@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ExecutionVisitor extends BaseVisitor {
+public class ExecutionVisitor implements IVisitor {
     private final @NonNull ShellEnv env;
 
-    private static final Map<String, BaseBuiltin> BUILTINS = new HashMap<>();
+    private static final Map<String, IBuiltin> BUILTINS = new HashMap<>();
 
     static {
         List.of(

@@ -3,7 +3,7 @@ package com.lmderval.discordsh.ast;
 import com.lmderval.discordsh.utils.StringEscape;
 import org.jspecify.annotations.NonNull;
 
-public class DumpVisitor extends BaseVisitor {
+public class DumpVisitor implements IVisitor {
     private final @NonNull StringBuilder dump;
 
     public DumpVisitor() {

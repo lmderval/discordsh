@@ -14,7 +14,7 @@ public class SimpleCommandAst extends BaseAst {
     }
 
     @Override
-    public void accept(@NonNull BaseVisitor visitor) {
+    public void accept(@NonNull IVisitor visitor) {
         visitor.visit(this);
     }
 

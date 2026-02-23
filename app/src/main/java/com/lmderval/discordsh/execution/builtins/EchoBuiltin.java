@@ -6,7 +6,7 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.List;
 
-public class EchoBuiltin extends BaseBuiltin {
+public class EchoBuiltin implements IBuiltin {
     @Override
     public @NonNull String getName() {
         return "echo";

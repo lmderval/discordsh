@@ -5,7 +5,7 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.List;
 
-public abstract class BaseBuiltin {
-    public abstract @NonNull String getName();
-    public abstract void execute(@NonNull List<String> args, @NonNull ShellEnv env);
+public interface IBuiltin {
+    @NonNull String getName();
+    void execute(@NonNull List<String> args, @NonNull ShellEnv env);
 }

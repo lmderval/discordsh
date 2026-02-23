@@ -10,7 +10,7 @@ public abstract class BaseAst {
         this.location = location;
     }
 
-    public abstract void accept(@NonNull BaseVisitor visitor);
+    public abstract void accept(@NonNull IVisitor visitor);
 
     public @NonNull Location getLocation() {
         return location;
