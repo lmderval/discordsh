@@ -7,8 +7,13 @@ import com.lmderval.discordsh.execution.ChannelStream.Mode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class ShellEnv {
+    public static final int STDIN = 0;
+    public static final int STDOUT = 1;
+    public static final int STDERR = 2;
+
     private final @NonNull Guild guild;
     private final @NonNull Map<Integer, ChannelStream> channels;
 
@@ -28,5 +33,9 @@ public class ShellEnv {
         if (mode != channel.mode() && channel.mode() != Mode.IN_OUT)
             throw new RuntimeException("Invalid mode for descriptor " + channelDescriptor);
         channels.put(descriptor, new ChannelStream(channel.channel(), mode));
+    }
+
+    public @NonNull Optional<ChannelStream> getChannel(int channelDescriptor) {
+        return Optional.ofNullable(channels.get(channelDescriptor));
     }
 }
